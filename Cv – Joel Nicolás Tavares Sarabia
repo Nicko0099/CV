@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joel Nicolás Tavares Sarabia | CV</title>
+  <meta name="description" content="Currículum vitae de Joel Nicolás Tavares Sarabia, Desarrollador de Software especializado en ERP, Frontend y Backend." />
+  <style>
+    :root {
+      --primary: #1B396A;
+      --secondary: #328CC1;
+      --accent: #00A878;
+      --bg: #f4f6f9;
+      --text: #1f2933;
+      --muted: #6b7280;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 2.5rem 1rem;
+      border-radius: 0 0 16px 16px;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: .5rem;
+    }
+
+    header h2 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      opacity: .9;
+    }
+
+    .contact {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: .95rem;
+    }
+
+    section {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.8rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,.05);
+    }
+
+    section h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--accent);
+      padding-left: .6rem;
+    }
+
+    .item {
+      margin-bottom: 1.2rem;
+    }
+
+    .item h4 {
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .item span {
+      font-size: .85rem;
+      color: var(--muted);
+    }
+
+    ul {
+      margin-top: .5rem;
+      padding-left: 1.2rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .skill {
+      background: var(--secondary);
+      color: #fff;
+      padding: .35rem .7rem;
+      border-radius: 999px;
+      font-size: .8rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: .85rem;
+      color: var(--muted);
+      margin: 2rem 0 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Joel Nicolás Tavares Sarabia</h1>
+      <h2>Desarrollador de Software | ERP | Frontend & Backend</h2>
+      <div class="contact">
+        <div>📍 Huichapan, Hidalgo</div>
+        <div>📞 +52 729 695 3141</div>
+        <div>✉️ <a href="mailto:jnicolassarabia@gmail.com">jnicolassarabia@gmail.com</a></div>
+        <div>🔗 <a href="https://www.linkedin.com/in/joel-nicolas-tavares-sarabia-510ab0271" target="_blank">LinkedIn</a></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section>
+      <h3>Resumen Profesional</h3>
+      <p>
+        Ingeniero en Sistemas Computacionales con experiencia en soporte técnico, desarrollo Front y Back-End
+        y optimización de sistemas ERP. Enfocado en la resolución eficiente de incidencias, mejora continua
+        y comunicación clara con usuarios y equipos multidisciplinarios.
+      </p>
+    </section>
+
+    <section>
+      <h3>Experiencia Profesional</h3>
+
+      <div class="item">
+        <h4>Desarrollador de Software – ITESHU</h4>
+        <span>06/2025 – 12/2025 | Saucillo, Hidalgo</span>
+        <ul>
+          <li>Desarrollo, mantenimiento y optimización de sistemas internos y ERP institucional.</li>
+          <li>Reducción del 30% de incidencias recurrentes mediante mejoras de código.</li>
+          <li>Optimización de tiempos de carga incrementando la eficiencia operativa en un 20%.</li>
+          <li>Soporte técnico nivel 1 y 2 con 95% de satisfacción.</li>
+          <li>Resolución del 90% de incidencias en menos de 24 horas.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h4>Desarrollador de Software – Sys&Web</h4>
+        <span>01/2023 – 12/2024 | CDMX</span>
+        <ul>
+          <li>Migración y actualización de sistemas ERP.</li>
+          <li>Optimización de procesos internos (20%).</li>
+          <li>Gestión y seguimiento de incidencias.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h4>Desarrollo de Aplicaciones Móviles – RayyGas</h4>
+        <span>01/2023 – 12/2024 | Huichapan, Hidalgo</span>
+        <ul>
+          <li>Diseño de arquitectura y desarrollo de app móvil.</li>
+          <li>Optimización de consultas y rendimiento.</li>
+          <li>Agilización del acceso a datos internos en un 40%.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h3>Educación</h3>
+      <div class="item">
+        <h4>Ingeniería en Sistemas Computacionales</h4>
+        <span>Instituto Tecnológico Superior de Huichapan – 2023</span>
+      </div>
+    </section>
+
+    <section>
+      <h3>Habilidades Técnicas</h3>
+      <div class="skills">
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">PHP</span>
+        <span class="skill">Laravel</span>
+        <span class="skill">React</span>
+        <span class="skill">Node.js</span>
+        <span class="skill">SQL</span>
+        <span class="skill">MongoDB</span>
+        <span class="skill">MariaDB</span>
+        <span class="skill">Git</span>
+        <span class="skill">GitHub</span>
+        <span class="skill">Scrum</span>
+        <span class="skill">Agile</span>
+        <span class="skill">ERP</span>
+      </div>
+    </section>
+
+    <section>
+      <h3>Idiomas</h3>
+      <ul>
+        <li>Español – Nativo</li>
+        <li>Inglés – Avanzado</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Propuesta de Valor</h3>
+      <p>
+        Listo para integrarme a equipos de desarrollo donde pueda aportar valor desde el primer día,
+        con enfoque en mejora continua, soporte, ERP y desarrollo de soluciones eficientes.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 – Joel Nicolás Tavares Sarabia · CV en GitHub Pages
+  </footer>
+
+</body>
+</html>
