@@ -4,240 +4,299 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Joel Nicolás Tavares Sarabia | CV</title>
-  <meta name="description" content="Currículum vitae de Joel Nicolás Tavares Sarabia, Desarrollador de Software especializado en ERP, Frontend y Backend." />
+
   <style>
     :root {
+      --bg: #f4f6f9;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #6b7280;
       --primary: #1B396A;
       --secondary: #328CC1;
       --accent: #00A878;
-      --bg: #f4f6f9;
-      --text: #1f2933;
-      --muted: #6b7280;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    body.dark {
+      --bg: #0f172a;
+      --card: #020617;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --primary: #60a5fa;
+      --secondary: #38bdf8;
+      --accent: #34d399;
     }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', system-ui, sans-serif; }
 
     body {
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.75;
+      transition: background .3s, color .3s;
     }
 
-    a {
-      color: var(--secondary);
-      text-decoration: none;
-    }
+    a { color: var(--secondary); text-decoration: none; }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem 1rem;
-    }
+    .container { max-width: 1100px; margin: auto; padding: 2rem 1rem; }
 
     header {
-      background: var(--primary);
-      color: #fff;
-      padding: 2.5rem 1rem;
-      border-radius: 0 0 16px 16px;
-      margin-bottom: 2rem;
+      position: relative;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border-radius: 0 0 28px 28px;
+      padding: 3.2rem 1rem;
+      animation: fadeDown .7s ease;
+      overflow: hidden;
     }
 
-    header h1 {
-      font-size: 2.2rem;
-      margin-bottom: .5rem;
+    .profile-pic {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,.6);
+      background: #fff;
     }
 
-    header h2 {
-      font-size: 1.1rem;
-      font-weight: 400;
-      opacity: .9;
-    }
+    header h1 { font-size: 2.6rem; }
+    header h2 { font-weight: 400; opacity: .95; margin-top: .4rem; max-width: 800px; }
 
-    .contact {
-      margin-top: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      font-size: .95rem;
+    .top-actions { margin-top: 1.6rem; display: flex; gap: .6rem; flex-wrap: wrap; }
+
+    .btn {
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.35);
+      color: white;
+      padding: .5rem .9rem;
+      border-radius: 999px;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      font-size: .85rem;
     }
 
     section {
-      background: #fff;
-      border-radius: 16px;
-      padding: 1.8rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,.05);
+      background: var(--card);
+      margin-bottom: 2.2rem;
+      border-radius: 22px;
+      padding: 2.2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      animation: fadeUp .7s ease;
     }
 
     section h3 {
       color: var(--primary);
-      margin-bottom: 1rem;
+      margin-bottom: 1.4rem;
       border-left: 4px solid var(--accent);
       padding-left: .6rem;
     }
 
-    .item {
-      margin-bottom: 1.2rem;
+    /* TIMELINE */
+    .timeline { position: relative; margin-left: 1rem; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--accent);
     }
 
-    .item h4 {
-      font-size: 1rem;
-      color: var(--text);
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
     }
 
-    .item span {
-      font-size: .85rem;
-      color: var(--muted);
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1px;
+      top: .4rem;
+      width: 14px;
+      height: 14px;
+      background: var(--secondary);
+      border-radius: 50%;
     }
 
-    ul {
-      margin-top: .5rem;
-      padding-left: 1.2rem;
-    }
+    .timeline-item span { color: var(--muted); font-size: .85rem; display: block; }
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .5rem;
-    }
+    ul { margin-top: .6rem; padding-left: 1.2rem; }
+
+    .skills { display: flex; flex-wrap: wrap; gap: .5rem; }
 
     .skill {
       background: var(--secondary);
-      color: #fff;
+      color: white;
       padding: .35rem .7rem;
       border-radius: 999px;
-      font-size: .8rem;
+      font-size: .75rem;
     }
 
-    footer {
-      text-align: center;
-      font-size: .85rem;
-      color: var(--muted);
-      margin: 2rem 0 1rem;
+    footer { text-align: center; color: var(--muted); font-size: .8rem; margin: 2.5rem 0 1rem; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeDown { from { opacity: 0; transform: translateY(-18px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 768px) {
+      .profile-pic { position: static; margin-bottom: 1rem; }
+      header { text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <h1>Joel Nicolás Tavares Sarabia</h1>
-      <h2>Desarrollador de Software | ERP | Frontend & Backend</h2>
-      <div class="contact">
-        <div>📍 Huichapan, Hidalgo</div>
-        <div>📞 +52 729 695 3141</div>
-        <div>✉️ <a href="mailto:jnicolassarabia@gmail.com">jnicolassarabia@gmail.com</a></div>
-        <div>🔗 <a href="https://www.linkedin.com/in/joel-nicolas-tavares-sarabia-510ab0271" target="_blank">LinkedIn</a></div>
-      </div>
+<header>
+  <div class="container">
+    <img src="foto.jpg" alt="Joel Nicolás Tavares Sarabia" class="profile-pic">
+
+    <h1 data-es="Joel Nicolás Tavares Sarabia" data-en="Joel Nicolás Tavares Sarabia"></h1>
+    <h2 data-es="Desarrollador de Software | ERP | Frontend & Backend | Optimización de Sistemas | Metodologías Ágiles"
+        data-en="Software Developer | ERP | Frontend & Backend | Systems Optimization | Agile Methodologies"></h2>
+
+    <div class="top-actions">
+      <button class="btn" onclick="toggleTheme()">🌙 Dark mode</button>
+      <button class="btn" onclick="toggleLang()">🌐 ES / EN</button>
+      <a class="btn" href="Currículum_TavaresSarabiaJoelNicolas.pdf" download>⬇ PDF</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main class="container">
+<main class="container">
 
-    <section>
-      <h3>Resumen Profesional</h3>
-      <p>
-        Ingeniero en Sistemas Computacionales con experiencia en soporte técnico, desarrollo Front y Back-End
-        y optimización de sistemas ERP. Enfocado en la resolución eficiente de incidencias, mejora continua
-        y comunicación clara con usuarios y equipos multidisciplinarios.
-      </p>
-    </section>
+<section>
+  <h3 data-es="Resumen Profesional" data-en="Professional Summary"></h3>
+  <p data-es="Ingeniero en Sistemas Computacionales con experiencia en soporte técnico, desarrollo Front-End y Back-End, y optimización de sistemas ERP. Destaco por resolver incidencias con rapidez, comunicarme eficazmente con usuarios y proponer mejoras tecnológicas que impulsan la productividad. Apasionado por el aprendizaje continuo y la innovación en entornos dinámicos."
+     data-en="Computer Systems Engineer with experience in technical support, frontend and backend development, and ERP system optimization. Known for fast issue resolution, effective communication with users, and proposing technological improvements that drive productivity. Passionate about continuous learning and innovation in dynamic environments."></p>
+</section>
 
-    <section>
-      <h3>Experiencia Profesional</h3>
+<section>
+  <h3 data-es="Experiencia Profesional" data-en="Professional Experience"></h3>
 
-      <div class="item">
-        <h4>Desarrollador de Software – ITESHU</h4>
-        <span>06/2025 – 12/2025 | Saucillo, Hidalgo</span>
-        <ul>
-          <li>Desarrollo, mantenimiento y optimización de sistemas internos y ERP institucional.</li>
-          <li>Reducción del 30% de incidencias recurrentes mediante mejoras de código.</li>
-          <li>Optimización de tiempos de carga incrementando la eficiencia operativa en un 20%.</li>
-          <li>Soporte técnico nivel 1 y 2 con 95% de satisfacción.</li>
-          <li>Resolución del 90% de incidencias en menos de 24 horas.</li>
-        </ul>
-      </div>
+  <div class="timeline">
 
-      <div class="item">
-        <h4>Desarrollador de Software – Sys&Web</h4>
-        <span>01/2023 – 12/2024 | CDMX</span>
-        <ul>
-          <li>Migración y actualización de sistemas ERP.</li>
-          <li>Optimización de procesos internos (20%).</li>
-          <li>Gestión y seguimiento de incidencias.</li>
-        </ul>
-      </div>
-
-      <div class="item">
-        <h4>Desarrollo de Aplicaciones Móviles – RayyGas</h4>
-        <span>01/2023 – 12/2024 | Huichapan, Hidalgo</span>
-        <ul>
-          <li>Diseño de arquitectura y desarrollo de app móvil.</li>
-          <li>Optimización de consultas y rendimiento.</li>
-          <li>Agilización del acceso a datos internos en un 40%.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h3>Educación</h3>
-      <div class="item">
-        <h4>Ingeniería en Sistemas Computacionales</h4>
-        <span>Instituto Tecnológico Superior de Huichapan – 2023</span>
-      </div>
-    </section>
-
-    <section>
-      <h3>Habilidades Técnicas</h3>
-      <div class="skills">
-        <span class="skill">HTML</span>
-        <span class="skill">CSS</span>
-        <span class="skill">JavaScript</span>
-        <span class="skill">PHP</span>
-        <span class="skill">Laravel</span>
-        <span class="skill">React</span>
-        <span class="skill">Node.js</span>
-        <span class="skill">SQL</span>
-        <span class="skill">MongoDB</span>
-        <span class="skill">MariaDB</span>
-        <span class="skill">Git</span>
-        <span class="skill">GitHub</span>
-        <span class="skill">Scrum</span>
-        <span class="skill">Agile</span>
-        <span class="skill">ERP</span>
-      </div>
-    </section>
-
-    <section>
-      <h3>Idiomas</h3>
+    <div class="timeline-item">
+      <h4 data-es="Desarrollador de Software – ITESHU" data-en="Software Developer – ITESHU"></h4>
+      <span data-es="06/2025 – 12/2025 | Saucillo, Hidalgo" data-en="06/2025 – 12/2025 | Hidalgo, Mexico"></span>
       <ul>
-        <li>Español – Nativo</li>
-        <li>Inglés – Avanzado</li>
+        <li data-es="Desarrollo, mantenimiento y optimización de sistemas internos." data-en="Development, maintenance, and optimization of internal systems."></li>
+        <li data-es="Mantenimiento preventivo y correctivo para asegurar la continuidad del servicio." data-en="Preventive and corrective maintenance to ensure service continuity."></li>
+        <li data-es="Diagnóstico, resolución de fallos y depuración de código." data-en="Issue diagnosis, troubleshooting, and code debugging."></li>
+        <li data-es="Migración y mejora de procesos clave del ERP institucional." data-en="Migration and improvement of key institutional ERP processes."></li>
+        <li data-es="Gestión integral del ciclo de incidencias mediante metodologías ágiles." data-en="End-to-end incident lifecycle management using agile methodologies."></li>
+        <li data-es="Implementación de nuevas funcionalidades solicitadas por los departamentos." data-en="Implementation of new features requested by departments."></li>
+        <li data-es="Capacitación y asesoría técnica a personal administrativo y operativo." data-en="Technical training and advisory for administrative and operational staff."></li>
+        <li data-es="Reducción del 30% de incidencias recurrentes y mejora del rendimiento en 20%." data-en="Reduced recurring issues by 30% and improved performance by 20%."></li>
+        <li data-es="95% de satisfacción en soporte técnico y resolución del 90% de incidencias en menos de 24 horas." data-en="95% satisfaction rate in technical support and 90% of issues resolved within 24 hours."></li>
+        <li data-es="Documentación de procedimientos y mejoras para futuras actualizaciones." data-en="Documentation of procedures and improvements for future system updates."></li>
       </ul>
-    </section>
+    </div>
 
-    <section>
-      <h3>Propuesta de Valor</h3>
-      <p>
-        Listo para integrarme a equipos de desarrollo donde pueda aportar valor desde el primer día,
-        con enfoque en mejora continua, soporte, ERP y desarrollo de soluciones eficientes.
-      </p>
-    </section>
+    <div class="timeline-item">
+      <h4 data-es="Desarrollador de Software – Sys&Web" data-en="Software Developer – Sys&Web"></h4>
+      <span data-es="01/2023 – 12/2024 | CDMX" data-en="01/2023 – 12/2024 | Mexico City"></span>
+      <ul>
+        <li data-es="Desarrollo y optimización de software y sistemas ERP." data-en="Software development and ERP system optimization."></li>
+        <li data-es="Mantenimiento preventivo y correctivo." data-en="Preventive and corrective maintenance."></li>
+        <li data-es="Migración y actualización de sistemas heredados." data-en="Migration and upgrade of legacy systems."></li>
+        <li data-es="Gestión eficiente de incidencias y seguimiento de issues." data-en="Efficient incident management and issue tracking."></li>
+        <li data-es="Optimización de procesos internos en un 20%." data-en="Optimized internal processes by 20%."></li>
+        <li data-es="Soporte técnico nivel 1 y 2 con 95% de satisfacción." data-en="Level 1 and 2 technical support with 95% satisfaction."></li>
+        <li data-es="Resolución del 90% de problemas técnicos en menos de 24 horas." data-en="Resolved 90% of technical issues within 24 hours."></li>
+      </ul>
+    </div>
 
-  </main>
+    <div class="timeline-item">
+      <h4 data-es="Desarrollo de Aplicaciones Móviles – RayyGas" data-en="Mobile Application Development – RayyGas"></h4>
+      <span data-es="01/2023 – 12/2024 | Huichapan, Hidalgo" data-en="01/2023 – 12/2024 | Hidalgo, Mexico"></span>
+      <ul>
+        <li data-es="Integración de servicios e información clave de la empresa." data-en="Integration of key company services and information."></li>
+        <li data-es="Análisis y levantamiento de requerimientos funcionales y no funcionales." data-en="Functional and non-functional requirements analysis."></li>
+        <li data-es="Diseño de arquitectura del sistema y conexiones a bases de datos." data-en="System architecture design and database integrations."></li>
+        <li data-es="Optimización de consultas y desarrollo de interfaces responsivas." data-en="Query optimization and responsive interface development."></li>
+        <li data-es="Pruebas funcionales, integración y validación con clientes." data-en="Functional testing, integration, and client validation."></li>
+        <li data-es="Aplicación móvil que agilizó la consulta de datos internos en un 40%." data-en="Mobile app that improved internal data access speed by 40%."></li>
+      </ul>
+    </div>
 
-  <footer>
-    © 2026 – Joel Nicolás Tavares Sarabia · CV en GitHub Pages
-  </footer>
+  </div>
+</section>
+
+<section>
+  <h3 data-es="Educación" data-en="Education"></h3>
+  <h4 data-es="Ingeniería en Sistemas Computacionales" data-en="Computer Systems Engineering"></h4>
+  <span data-es="Instituto Tecnológico Superior de Huichapan – 2023" data-en="Instituto Tecnológico Superior de Huichapan – 2023"></span>
+</section>
+
+<section>
+  <h3 data-es="Capacitación y Cursos" data-en="Training & Courses"></h3>
+  <ul>
+    <li data-es="Técnico instalador de cableado estructurado – ICATHI" data-en="Structured Cabling Technician – ICATHI"></li>
+    <li data-es="Emprendimiento social – WHATHWANI" data-en="Social Entrepreneurship – WHATHWANI"></li>
+  </ul>
+</section>
+
+<section>
+  <h3 data-es="Certificaciones y Competencias" data-en="Certifications & Soft Skills"></h3>
+  <ul>
+    <li data-es="Certificación TOEFL ITP" data-en="TOEFL ITP Certification"></li>
+    <li data-es="Certificación EGEL" data-en="EGEL Certification"></li>
+    <li data-es="Compromiso, trabajo en equipo y proactividad" data-en="Commitment, teamwork, and proactivity"></li>
+  </ul>
+</section>
+
+<section>
+  <h3 data-es="Habilidades Técnicas" data-en="Technical Skills"></h3>
+  <div class="skills">
+    <span class="skill">Agile</span><span class="skill">Bootstrap</span><span class="skill">C/C++</span><span class="skill">C#</span>
+    <span class="skill">Canva</span><span class="skill">CSS</span><span class="skill">ERP</span><span class="skill">Git</span>
+    <span class="skill">GitHub</span><span class="skill">GitLab</span><span class="skill">HTML</span><span class="skill">Java</span>
+    <span class="skill">JavaScript</span><span class="skill">JQuery</span><span class="skill">Laravel</span><span class="skill">MongoDB</span>
+    <span class="skill">MariaDB</span><span class="skill">Mercurial</span><span class="skill">Microsoft Office</span><span class="skill">MVC</span>
+    <span class="skill">PHP</span><span class="skill">React</span><span class="skill">Scrum</span><span class="skill">SQL</span>
+    <span class="skill">Node.js</span><span class="skill">Gmail</span>
+  </div>
+</section>
+
+<section>
+  <h3 data-es="Idiomas" data-en="Languages"></h3>
+  <ul>
+    <li data-es="Español – Nativo" data-en="Spanish – Native"></li>
+    <li data-es="Inglés – Avanzado" data-en="English – Advanced"></li>
+  </ul>
+</section>
+
+<section>
+  <h3 data-es="Propuesta de Valor" data-en="Value Proposition"></h3>
+  <p data-es="Listo para integrarme a un equipo de desarrollo donde pueda aplicar mis conocimientos técnicos y experiencia en soporte, ERP y desarrollo para aportar valor desde el primer día. Disponible para reubicación y aprendizaje continuo."
+     data-en="Ready to join a development team where I can apply my technical knowledge and experience in support, ERP, and software development to deliver value from day one. Open to relocation and continuous learning."></p>
+</section>
+
+</main>
+
+<footer>© 2026 – Joel Nicolás Tavares Sarabia</footer>
+
+<script>
+  let dark = false;
+  let lang = 'es';
+
+  function toggleTheme() {
+    dark = !dark;
+    document.body.classList.toggle('dark', dark);
+  }
+
+  function toggleLang() {
+    lang = lang === 'es' ? 'en' : 'es';
+    document.querySelectorAll('[data-es]').forEach(el => {
+      el.textContent = el.dataset[lang];
+    });
+  }
+
+  toggleLang(); toggleLang();
+</script>
 
 </body>
 </html>
